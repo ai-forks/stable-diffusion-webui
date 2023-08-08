@@ -11,7 +11,7 @@ MAINTAINER  light xxxxxx@email.com
 
 WORKDIR /workspace
 COPY docker/init-container.sh /root/
-COPY ./bootstrap.sh /root/
+COPY docker/bootstrap.sh /root/
 RUN chmod a+x /root/bootstrap.sh
 RUN sh /root/init-container.sh
 RUN rm -rf /root/init-container.sh
