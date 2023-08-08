@@ -10,7 +10,7 @@ FROM mixnet/sdwebui:base
 MAINTAINER  light xxxxxx@email.com
 
 WORKDIR /workspace
-COPY ./init-container.sh /root/
+COPY docker/init-container.sh /root/
 COPY ./bootstrap.sh /root/
 RUN chmod a+x /root/bootstrap.sh
 RUN sh /root/init-container.sh
