@@ -15,5 +15,6 @@ COPY docker/bootstrap.sh /root/
 RUN chmod a+x /root/bootstrap.sh
 #RUN sh /root/init-container.sh
 RUN rm -rf /root/init-container.sh
+RUN sed -i '/can_run_as_root=0/a\can_run_as_root=1' ./webui.sh
 RUN ./webui.sh
 ENTRYPOINT ["/root/bootstrap.sh"]
