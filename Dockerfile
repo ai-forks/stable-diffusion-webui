@@ -13,7 +13,7 @@ WORKDIR /workspace
 COPY docker/init-container.sh /root/
 COPY docker/bootstrap.sh /root/
 RUN chmod a+x /root/bootstrap.sh
-RUN sh /root/init-container.sh
+#RUN sh /root/init-container.sh
 RUN rm -rf /root/init-container.sh
-
+RUN ./webui.sh
 ENTRYPOINT ["/root/bootstrap.sh"]
